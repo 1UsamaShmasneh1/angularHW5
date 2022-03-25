@@ -1,0 +1,22 @@
+<div [style.color]="red">
+    <h1>user-details works!</h1>
+</div><hr>
+
+<div [style.color]="isColored ? 'blue' : 'black'">
+    <h3 class="card-title">{{user.name}}</h3>
+    <h3 class="card-subtitle mb-2 text-muted">{{user.email}}</h3>
+    <h3 class="card-text">Age: {{ calculateAge(user.birthDate) }}</h3>
+</div><hr>
+
+<div [ngSwitch]="user.contact" [ngStyle]="styles">
+    <h1 *ngSwitchCase="'email'">{{user.email}}</h1>
+    <h1 *ngSwitchCase="'phone'">{{user.phone}}</h1>
+    <h1 *ngSwitchCase>undefined</h1>
+</div><hr>
+
+<div>
+    <h1 [class.classStyle]="isClassStyle">Function result : {{ getSomeString()}}</h1>
+</div>
+<hr>
+
+<div [ngClass]="myClasses">Amazing, but not WOW!</div><hr>
